@@ -1,3 +1,5 @@
+import { OrgControl } from "./_components/org-control";
+
 const OrganizationIdLayout = ({
     children
 }: {
@@ -10,3 +12,5 @@ const OrganizationIdLayout = ({
         </>
     );
 };
+
+export default OrganizationIdLayout;
