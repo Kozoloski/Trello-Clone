@@ -18,7 +18,7 @@ interface SidebarProps {
 export const Sidebar = ({
     storageKey,
 }: SidebarProps) => {
-    const [expanded, setExpanded] = useLocalStorage
+    const [expanded, setExpanded] = useLocalStorage(storageKey, {});
 
     return (
         <div>
