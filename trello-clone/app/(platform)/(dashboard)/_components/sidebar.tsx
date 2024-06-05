@@ -16,9 +16,13 @@ interface SidebarProps {
 };
 
 export const Sidebar = ({
-    storageKey,
+    storageKey = "t-sidebar-state",
 }: SidebarProps) => {
-    const [expanded, setExpanded] = useLocalStorage(storageKey, {});
+    const [expanded, setExpanded] = useLocalStorage<Record<string, any>>(
+        storageKey, 
+        {}
+    );
+    const {organization: activeOrganization} = useOrganization();
 
     return (
         <div>
