@@ -22,7 +22,16 @@ export const Sidebar = ({
         storageKey, 
         {}
     );
-    const {organization: activeOrganization} = useOrganization();
+    const {organization: activeOrganization,
+        isLoaded: isLoadedOrg
+    } = useOrganization();
+    const {
+        userMemberships,
+        isLoaded: isLoadedList
+    } = useOrganizationList({
+        
+    })
+
 
     return (
         <div>
