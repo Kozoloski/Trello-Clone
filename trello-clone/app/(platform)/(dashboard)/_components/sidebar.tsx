@@ -29,10 +29,13 @@ export const Sidebar = ({
         userMemberships,
         isLoaded: isLoadedList
     } = useOrganizationList({
-        
-    })
+       userMemberships: {
+        infinite: true,
+       }, 
+    });
 
-
+    const defaultAccordionValue: string[] = Object.keys(expanded)
+    
     return (
         <div>
             Sidebar!
