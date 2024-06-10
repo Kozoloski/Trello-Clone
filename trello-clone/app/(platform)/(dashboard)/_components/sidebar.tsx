@@ -35,7 +35,21 @@ export const Sidebar = ({
     });
 
     const defaultAccordionValue: string[] = Object.keys(expanded)
+    .reduce((acc: string[], key: string) => {
+        if(expanded[key]) {
+            acc.push(key);
+        }
+
+        return acc;
+    }, []);
     
+    const onExpand = (id: string) => {
+        setExpanded((curr) =>({
+            ...curr,
+            [id]: !expanded[id],
+        }));
+    };
+
     return (
         <div>
             Sidebar!
