@@ -27,7 +27,7 @@ export const Sidebar = ({
     } = useOrganization();
     const {
         userMemberships,
-        isLoaded: isLoadedList
+        isLoaded: isLoadedOrgList
     } = useOrganizationList({
        userMemberships: {
         infinite: true,
@@ -49,6 +49,8 @@ export const Sidebar = ({
             [id]: !expanded[id],
         }));
     };
+
+    if(!isLoadedOrg || !isLoadedOrgList || !userMemberships.isLoading )
 
     return (
         <div>
