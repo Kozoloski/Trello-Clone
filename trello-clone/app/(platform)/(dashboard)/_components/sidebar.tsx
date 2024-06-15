@@ -8,6 +8,7 @@ import { useOrganization, useOrganizationList } from "@clerk/nextjs";
 import { Button} from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator"; 
 import { Accordion } from "@/components/ui/accordion";
+import { Skeleton } from "@/components/ui/skeleton";
 
 
 
@@ -50,11 +51,21 @@ export const Sidebar = ({
         }));
     };
 
-    if(!isLoadedOrg || !isLoadedOrgList || !userMemberships.isLoading )
+    if(!isLoadedOrg || !isLoadedOrgList || userMemberships.isLoading ) {
+        return (
+            <>
+            <Skeleton />
+            </>
+        );
+    };
 
     return (
-        <div>
-            Sidebar!
+       <> 
+        <div className="font-medium text-xs flex items-center mb-1">
+            <span>
+                Workspaces
+            </span>
         </div>
-    )
-}
+        </>
+    );
+};
