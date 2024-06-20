@@ -65,6 +65,20 @@ export const Sidebar = ({
             <span>
                 Workspaces
             </span>
+            <Button
+                asChild
+                type="button"
+                size="icon"
+                variant="ghost"
+                className="ml-auto"
+            
+            >
+                <Link href= "/select-org">
+                    <Plus
+                        className="h-4 w-4"
+                    />
+                </Link>
+            </Button>
         </div>
         </>
     );
