@@ -80,6 +80,12 @@ export const Sidebar = ({
                 </Link>
             </Button>
         </div>
+        <Accordion
+        type="multiple"
+        defaultValue={defaultAccordionValue}
+        >
+
+        </Accordion>
         </>
     );
 };
